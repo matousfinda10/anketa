@@ -18,9 +18,10 @@ form.addEventListener("submit", function (e) {
         headers: {
             "Accept": "application/json"
         },
-        body: new formData
+        body: formData
     })
     .then(response => {
         window.location.href = "https://hihihihakinghac-prog.github.io/ngl-link/storage.html";
     })
 });
+

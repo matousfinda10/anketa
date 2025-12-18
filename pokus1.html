@@ -5,13 +5,23 @@
     <title>FormSubmit test</title>
 </head>
 <body>
-<form action="https://api.web3forms.com/submit" method="POST">
-  <input type="hidden" name="access_key" value="ec734b46-d12d-4194-90e2-8d5c9187e21d">
-  <input type="text" name="name" required>
-  <input type="email" name="email" required>
-  <textarea name="message" required></textarea>
-  <button type="submit">Submit</button>
-</form>
+
+<script>
+    const webhookURL = "https://discord.com/api/webhooks/1443704225812058215/pfS9DPM1VtV5LGqyRKrnclWiIPlxu0UAYi0ATj5X4AMUN4mELMnCa2whfPfB9aNqQD3G";
+    const uzivatelovaOdpoved = "Testovací odpověď"; // nebo hodnota z formuláře
+
+    const data = {
+        content: "Nová odpověď v anketě: " + uzivatelovaOdpoved
+    };
+
+    fetch(webhookURL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+</script>
+
 </body>
 </html>
-

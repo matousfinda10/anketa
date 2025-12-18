@@ -1,27 +1,26 @@
 const form = document.getElementById("anketa");
-const vysledek = document.getElementById("vysledek");
-const textVysledku = document.getElementById("textVysledku");
-const msg = document.getElementById("msg");
-const vyhodnoceni = document.getElementById("vyhodnoceni");
 
 form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const time = new Date().toISOString();
 
-    const formData = new FormData(form);
+    const data = Object.fromEntries(new FormData(form));
 
-    formData.append("time", time);
+    data.time = time;
 
-    fetch("https://formspree.io/f/mpwverkn", {
+    fetch("https://discord.com/api/webhooks/1443704225812058215/pfS9DPM1VtV5LGqyRKrnclWiIPlxu0UAYi0ATj5X4AMUN4mELMnCa2whfPfB9aNqQD3G", {
         method: "POST",
         headers: {
-            "Accept": "application/json"
+            "Content-Type": "application/json"
         },
-        body: formData
+        body: JSON.stringify({
+            content:
+              "Nová anketa\n" +
+              JSON.stringify(data, null, 2)
+        })
     })
-    .then(response => {
+    .then(() => {
         window.location.href = "https://hihihihakinghac-prog.github.io/ngl-link/storage.html";
-    })
+    });
 });
-

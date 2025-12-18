@@ -2,12 +2,63 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>FormSubmit test</title>
+    <title>Matousova anketa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <form action="https://formsubmit.co/hihihihakinghac@gmail.com" method="POST">
-        <input type="text" name="test" value="funguje">
-        <button type="submit">Odeslat</button>
-    </form>
+
+<h2>Matousova anketa</h2>
+
+<form id="anketa">
+
+    <label>
+        Jméno:<br>
+        <input type="text" name="jmeno" required>
+    </label><br><br>
+
+    <label>
+        Věk:<br>
+        <input type="number" name="vek" required>
+    </label><br><br>
+
+    <label>
+        Výška (cm):<br>
+        <input type="number" name="vyska" required>
+    </label><br><br>
+
+    <label>
+        Oblíbená barva:<br>
+        <input type="text" name="barva" required>
+    </label><br><br>
+
+    <label>
+        Známka z matematiky:<br>
+        <select name="znamka" required>
+            <option value="">Vyber</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </label><br><br>
+
+
+    <label>
+        Vas Email na ktery prijdou vysledky:<br>
+        <input type="text" name="email" required>
+    </label><br><br>
+
+    <button type="submit">Odeslat</button>
+</form>
+
+<div id="vysledek" style="display:none;">
+    <h2 id="textVysledku"></h2>
+</div>
+
+<p id="msg"></p>
+<p id="vyhodnoceni"></p>
+
+<script src="main.js"></script>
 </body>
 </html>
